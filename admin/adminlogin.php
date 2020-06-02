@@ -6,8 +6,8 @@
 </head>
 <body>
 <div id='frm'>
-	<form action="process.php" method="POST" class="wrapper" autocomplete="off">
-		<h1 align="center">Staff Login</h1>
+	<form action="adminprocess.php" method="POST" class="wrapper" autocomplete="off">
+		<h1 align="center">Admin Login</h1>
 		<div class="inputs">
 			<label>Email:</label>
 			<input type="text" id="user " placeholder="Enter Email" name="user" required>

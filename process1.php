@@ -47,9 +47,10 @@ if($row>0)
 if($msg)
 {
 	echo "<script>alert('Register successfully');</script>";
+	echo "<script>location.href='index.php'</script>";
 }
 }
 
-header("location: index.html");
+header("location: index.php");
 
 ?>

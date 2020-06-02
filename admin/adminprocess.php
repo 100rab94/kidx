@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['email'] = $_POST['user'];
+$_SESSION['message'] = '';
 $username=$_POST['user'];
 $password=$_POST['pass'];
 
@@ -12,7 +12,7 @@ $link = mysqli_connect("localhost", "root", "", "test") or die($link);
 $username=mysqli_real_escape_string($link,$username);
 $password=mysqli_real_escape_string($link,$password);
 
-$result=mysqli_query($link,"select * from users where email='$username' and password='$password'") or die("Failed to query the Database".mysqli_error());
+$result=mysqli_query($link,"select * from user where username='$username' and password='$password'") or die("Failed to query the Database".mysqli_error());
 
 
 $row=mysqli_fetch_array($result);
@@ -22,10 +22,9 @@ if($row['username'] == $username && $row['password'] == $password){
 	echo"Failed try again!!";
 }
 if (isset($_SESSION['user'])){
-	echo "<h1> Welcome1 ".$_SESSION['user']."</h1>";
-		echo "<script>location.href='index2.php'</script>";
+	echo "<h1> Welcome to admins portal ".$_SESSION['user']."</h1>";
+		echo "<script>location.href='adminindex2.php'</script>";
 	
-
 	echo "<br> <a href='logout.php'><input type=button value=logout name=logout></a>";
 }
 else{
@@ -33,7 +32,7 @@ else{
 	{
 		$_SESSION['user']=$username;
 		echo "<script> alert('Login successful')</script>";
-		echo "<script>location.href='index2.php'</script>";
+		echo "<script>location.href='adminindex2.php'</script>";
 	}
 	else{
 		echo "<script> alert('username or password is incorrect!')</script>";

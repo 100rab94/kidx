@@ -23,7 +23,7 @@
 			<div class="collapse navbar-collapse" id="micon">
 			<ul class="nav navbar-nav">
 				<li><a href="">Home</a></li>
-				<li><a href="">Courses</a></li>
+				<li><a href="activity.php">Activities</a></li>
 				<li><a href="">About Us</a></li>
 				<li><a href="">Contact</a></li>
 				<li><a href="">How to Enroll</a></li>
@@ -37,7 +37,14 @@
 				<h1>Welcome to</h1>
 				<p class="big-text">Kidx Kindergarten</p>
 				<p>Make your childrens learning experience a worth while</p>
-				<a class="btn btn-first" href="login.php" target="">Login</a>
+				<div class="dropdown">
+  				<button class="dropbtn">Login</button>
+  					<div class="dropdown-content">
+ 				 	<a href="admin/adminlogin.php">Admin Login</a>
+					<a href="login.php">Parent Login</a>
+  					<a href="login.php">Satff Login</a>
+ 					</div>
+                </div>
 				<a class="btn btn-second" href="registration.php">Register</a>
 
 			</div>

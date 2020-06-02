@@ -1,3 +1,10 @@
+<?php
+session_start();
+$link = mysqli_connect("localhost", "root", "", "test") or die($link);
+$query = "select * from activity where staff='{$_SESSION['email']}'";
+echo $query;
+$result = mysqli_query($link,$query);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +29,13 @@
 			</div>
 			<div class="collapse navbar-collapse" id="micon">
 			<ul class="nav navbar-nav">
-				<li><a href="">Home</a></li>
-				<li><a href="">Courses</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="activity.php">Activities</a></li>
 				<li><a href="">About Us</a></li>
 				<li><a href="">Contact</a></li>
-				<li><a href="">How to Enroll</a></li>
+				<li><a href="enrollkid.php">Regiter my kid</a></li>
+				<li><a href="myaccount.php">My Account</a></li>
+				<li><a href='logout.php'><input type=button value=logout name=logout></a></li>
 			</ul>
 			</div>
 		</div>
@@ -36,13 +45,23 @@
 			<div class="col-sm-6 banner-info">
 				<h1>Welcome to</h1>
 				<p class="big-text">Kidx Kindergarten</p>
-				<p>Make your childrens learning experience a worth while</p>
-				<a class="btn btn-first" href="login.php" target="">Login</a>
-				<a class="btn btn-second" href="registration.php">Register</a>
-
+				<p>Make your childs dream come true by learning with us</p>
+				<h1>Activities Assigned</h1> 
+				<table align="Left" style="width:300; line-height: 30px;">
+					
+					<?php 
+					while ($rows=mysqli_fetch_assoc($result)) {
+					?>
+						<tr>
+							<td><?php echo $rows['activityName']; ?></td>
+						</tr>
+					<?php
+					}
+					?>
+				</table>
 			</div>
 			<div class="col-sm-6 banner-image">
-				<img src="kidx1.png" class="img-responsive">
+				<img src="kidx1.jpeg" class="img-responsive">
 			</div>
 		</div>
 	</div>

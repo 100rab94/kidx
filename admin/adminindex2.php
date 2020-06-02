@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +26,11 @@
 			<div class="collapse navbar-collapse" id="micon">
 			<ul class="nav navbar-nav">
 				<li><a href="">Home</a></li>
-				<li><a href="">Courses</a></li>
-				<li><a href="">About Us</a></li>
-				<li><a href="">Contact</a></li>
-				<li><a href="">How to Enroll</a></li>
+				<li><a href="">Manage users</a></li>
+				<li><a href="activity.php">Activities</a></li>
+				<li><a href="">Enroll Kid</a></li>
+				<li><a href="">Calendar</a></li>
+				<li><a href='logout.php'><input type=button value=logout name=logout></a></li>
 			</ul>
 			</div>
 		</div>
@@ -34,12 +38,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 banner-info">
-				<h1>Welcome to</h1>
-				<p class="big-text">Kidx Kindergarten</p>
-				<p>Make your childrens learning experience a worth while</p>
-				<a class="btn btn-first" href="login.php" target="">Login</a>
-				<a class="btn btn-second" href="registration.php">Register</a>
-
+				<h1>Welcome to  </h1>
+				<p class="big-text">Admins Panel of Kidx Kindergarten</p>
+				<p>Manage users and enhance the profile accessibilities</p>
+				<a href="addstudent.php" class="btn btn-info btn-lg">Create Staff Profile</a><a href="enrollkid.php" class="btn btn-info btn-lg">Create Admin</a>
+                <a href="updatestudent.php" class="btn btn-info btn-lg">Add Activities</a><a href="deletestudent.php" class="btn btn-info btn-lg">Edit Kid Info </a>
 			</div>
 			<div class="col-sm-6 banner-image">
 				<img src="kidx1.png" class="img-responsive">
